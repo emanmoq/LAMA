@@ -6,6 +6,22 @@ table{
     display: none;
 }
 
+table td{
+    width:50%;
+    padding: 20px;
+    text-align: center;
+    
+}
+table tr{
+    border-bottom: 1px solid #bebbbb;
+}
+thead tr td{
+    width:100%
+}
+table tr td:first-child
+{
+    background-color:#e9cece;
+}
 .formgroup {
     margin-top:10px;
 }

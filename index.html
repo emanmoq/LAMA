@@ -9,79 +9,96 @@
 </head>
 
 <body>
-    <div class="Menu">
-        <button class="btn MenuBtn">Menu </button>
-        <ul class="list">
-          <li>
-            <a href="inex.html"> Main </a>
-          </li>
-          <li>
-            <a href="cv-form">CV-Form </a>
-          </li>
-          <li>
-            <a href="Codepage">Code page </a>
-          </li>
-          <li>
-              <a href="Quizpage">Quiz page </a>
-            </li>
-            <li>
-              <a href="Mediapage">Media  page </a>
-            </li>
-        </ul>
-      </div>
+  <div class="Menu">
+    <button class="btn MenuBtn">Menu </button>
+    <ul class="list">
+      <li>
+        <a href="inex.html"> Main </a>
+      </li>
+      <li>
+        <a href="cv-form">CV-Form </a>
+      </li>
+      <li>
+        <a href="Codepage">Code page </a>
+      </li>
+      <li>
+        <a href="Quizpage">Quiz page </a>
+      </li>
+      <li>
+        <a href="Mediapage">Media page </a>
+      </li>
+    </ul>
+  </div>
   <div class="content">
     <div class="container">
-        <div class="row">
-        
-          <div class="col-lg-8 col-md-8">
-            <div class="FormContainer">
-              <form action="" method="post" id="CV-Form">
-                <div class="formgroup">
-                  <label for="">Enter Your Name:</label>
-                  <input type="text" name="name"class="form-control">
-                </div>
-                <div class="formgroup"> <label for="">Enter Your Email:</label>
-                  <input type="email" name="Email"  class="form-control" ></div>
-                <div class="formgroup">
-                  <label for="">Enter Your Address:</label>
-                  <input type="text" name="Address" class="form-control">
-                </div>
-                <div class="formgroup">
-                  <label for="">Enter Your Study:</label>
-                  <input type="text" name="study" class="form-control">
-                </div>
-          
-                <div class="formgroup"> <label for="">Enter Your Phone No:</label>
-                  <input type="text" name="Phone"  class="form-control"></div>
-                <div class="formgroup"> <label for="">Enter Your Age</label>
-                  <input type="text" name="age"  class="form-control"></div>
-                  <div class="formgroup" > <label for="">what is yout Hobbies:</label>
-                    <input type="text" name="Hobbies"  class="form-control"></div>
-                    <div class="formgroup" > <label for="">what is yout Skills:</label>
-                        <input type="text" name="Skills"  class="form-control"></div>
-                    <button type="submit" class="btn submit-btn" name="sub" value="submit"> submit</button>
-    
-              </form>
-            </div>
-            <table>
-              <thead>
-                <tr> <td colspan="8">Your CV</td></tr>
-                <tr>
-                  <td>Name</td>
-                  <td>Email</td>
-                  <td>Address</td>
-                  <td>Study</td>
-                  <td>Phone No</td>
-                  <td>Age</td>
-                  <td>Hobbies</td>
-                  <td>Skills</td>
-                </tr>
-              </thead>
-              <tbody id="displayCV"></tbody>
-            </table>
+      <div class="row">
+
+        <div class="col-lg-8 col-md-8">
+          <div class="FormContainer">
+            <form action="" method="post" id="CV-Form">
+              <div class="formgroup">
+                <label for="">Enter Your Name:</label>
+                <input type="text" name="name" class="form-control">
+              </div>
+              <div class="formgroup"> <label for="">Enter Your Email:</label>
+                <input type="email" name="Email" class="form-control"></div>
+              <div class="formgroup">
+                <label for="">Enter Your Address:</label>
+                <input type="text" name="Address" class="form-control">
+              </div>
+              <div class="formgroup">
+                <label for="">Enter Your Study:</label>
+                <input type="text" name="study" class="form-control">
+              </div>
+
+              <div class="formgroup"> <label for="">Enter Your Phone No:</label>
+                <input type="text" name="Phone" class="form-control"></div>
+              <div class="formgroup"> <label for="">Enter Your Age</label>
+                <input type="text" name="age" class="form-control"></div>
+              <div class="formgroup"> <label for="">what is yout Hobbies:</label>
+                <input type="text" name="Hobbies" class="form-control"></div>
+              <div class="formgroup"> <label for="">what is yout Skills:</label>
+                <input type="text" name="Skills" class="form-control"></div>
+              <button type="submit" class="btn submit-btn" name="sub" value="submit"> submit</button>
+
+            </form>
           </div>
+          <table>
+            <thead>
+              <tr>
+                <td colspan="2">Your CV</td>
+              </tr>
+            </thead>
+            <tbody id="displayCV">
+              <tr id="Name">
+                <td>Name</td>
+              </tr>
+              <tr id="Email">
+                <td>Email</td>
+              </tr>
+              <tr id="Address">
+                <td>Address</td>
+              </tr>
+              <tr id="Study">
+                <td>Study</td>
+              </tr>
+              <tr id="Phone">
+                <td>Phone No</td>
+              </tr>
+              <tr id="Age">
+                <td>Age</td>
+              </tr>
+              <tr id="Hobbies">
+                <td>Hobbies</td>
+              </tr>
+              <tr id="Skills">
+                <td>Skills</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+    </div>
   </div>
 
   <script type="text/javascript" src="js/jquery.js"></script>
@@ -96,8 +113,15 @@
       $inputs.each(function () {
         values[this.name] = $(this).val();
       });
-      $('#displayCV').append("<tr><td>" + values.name + "</td><td>" + values.Email + "</td><td>" + values.Address + "</td><td>" + values.study + "</td><td>" + values.Phone + "</td><td>" + values.age + "</td><td>"+values.Hobbies + "</td><td>"+values.Skills +"</td></tr>");
-      $("input[type=text], textarea").val("");
+      $("#Name").append("<td>"+values.name+"</td>");
+      $("#Email").append("<td>"+values.Email+"</td>");
+      $("#Address").append("<td>"+values.Address+"</td>");
+      $("#Study").append("<td>"+values.study+"</td>");
+      $("#Phone").append("<td>"+values.Phone+"</td>");
+      $("#Age").append("<td>"+values.age+"</td>");
+      $("#Hobbies").append("<td>"+values.Hobbies+"</td>");
+      $("#Skills").append("<td>"+values.Skills+"</td>");
+    
     });
   </script>
 
